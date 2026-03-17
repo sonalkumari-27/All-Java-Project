@@ -34,16 +34,12 @@ public class CustomerDAOImpl {
         tx.commit();
         em.close();
     }
-
-    // 4️⃣ Fetch Customer by ID
     public Customer getCustomerById(int id) {
         EntityManager em = emf.createEntityManager();
         Customer c = em.find(Customer.class, id);
         em.close();
         return c;
     }
-
-    // 5️⃣ Fetch All Customers
     public List<Customer> getAllCustomers() {
         EntityManager em = emf.createEntityManager();
         List<Customer> list =
@@ -52,8 +48,6 @@ public class CustomerDAOImpl {
         em.close();
         return list;
     }
-
-    // 6️⃣ JPQL — Fetch by Email
     public Customer getCustomerByEmail(String email) {
         EntityManager em = emf.createEntityManager();
         Customer c = em.createQuery(

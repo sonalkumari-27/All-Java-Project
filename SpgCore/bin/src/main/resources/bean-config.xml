@@ -1,0 +1,48 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    SETTER INJ  -->
+<!--    <bean id="student" class="org.example.Student">-->
+<!--        <property name="id" value="100"/>-->
+<!--        <property name="name" value="Kalpak"/>-->
+<!--        <property name="gender" value="Male"/>-->
+<!--        <property name="marks" value="94"/>-->
+<!--    </bean>-->
+    <bean id="employee" class="org.example.Employee" autowire="byType">
+        <property name="id" value="200"/>
+<!--        <property name="name" value="whodis"/>-->
+        <property name="email" value="test@email.com"/>
+        <property name="salary" value="5100.22"/>
+<!--        <property name= "student1" ref="student"/>-->
+    </bean>
+
+
+    <!--        If u have custom obj field and you want that field to be injected auto, we will go for autowire attrb.-->
+<!--    <bean id="employee" class="org.example.Employee" autowire="byType">-->
+<!--&lt;!&ndash;    NoUniqueBeanDefinitionException Two bean of same type student and student1&ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="employee" class="org.example.Employee" autowire="byName">&ndash;&gt;-->
+<!--&lt;!&ndash;        For byName the setter name takes priority -> setStudent calls stu and setStudent1 calls stu1&ndash;&gt;-->
+<!--        <property name="id" value="100"/>-->
+<!--&lt;!&ndash;        <property name="name" value="TestEmployee"/>&ndash;&gt;-->
+<!--        <property name="email" value="test@email.com"/>-->
+<!--        <property name="salary" value="50000.00"/>-->
+<!--&lt;!&ndash;        <property name="student" ref="student1"/>&ndash;&gt;-->
+<!--    </bean>-->
+
+<!--   CONSTRUCTOR INJ     -->
+    <bean id="student" class="org.example.Student">
+        <constructor-arg value="200"/>
+        <constructor-arg  value="whodis"/>
+        <constructor-arg value="Male"/>
+        <constructor-arg value="45"/>
+    </bean>
+
+    <bean name="string" class="java.lang.String">
+        <constructor-arg value="testString"/>
+
+    </bean>
+
+</beans>
